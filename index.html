@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Elliott | Use. Learn. Build.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            border-radius: 0 0 30px 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero-tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: white;
+        }
+        
+        .video-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+        
+        .video-section .subhead {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .video-placeholder {
+            background: #f0f0f0;
+            border: 3px dashed #ccc;
+            border-radius: 16px;
+            padding: 80px 40px;
+            margin: 30px 0;
+            color: #666;
+        }
+        
+        .video-placeholder p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .video-placeholder small {
+            color: #999;
+        }
+        
+        /* Core Message */
+        .core-message {
+            padding: 60px 20px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .core-message h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1e3a5f;
+        }
+        
+        .core-message .big-idea {
+            font-size: 1.4rem;
+            color: #444;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+        
+        .use-learn-build {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .ulb-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .ulb-item .icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .ulb-item .word {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Three Options */
+        .options {
+            padding: 60px 20px;
+            background: white;
+        }
+        
+        .options h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+        
+        .options .subhead {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+       .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .option {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            border-top: 4px solid #2d5a87;
+        }
+        
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .option h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+        
+        .option p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .option .tag {
+            display: inline-block;
+            background: #2d5a87;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        /* What If */
+        .what-if {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .what-if h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .what-if p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Social Proof */
+        .proof {
+            padding: 60px 20px;
+            background: white;
+            text-align: center;
+        }
+        
+        .proof h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #1e3a5f;
+        }
+        
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .stat {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d5a87;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1e3a5f;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d5a87 0%, #1e3a5f 100%);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(45, 90, 135, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(45, 90, 135, 0.5);
+        }
+        
+        /* Popup Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+           background: white;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .modal-body {
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .modal-body iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            display: block;
+        }
+        
+        /* Mobile modal adjustments */
+        @media (max-width: 600px) {
+            .modal-content {
+                max-height: 95vh;
+            }
+            
+            .modal-body iframe {
+                height: 75vh;
+            }
+        }
+        
+        .cta-note {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .use-learn-build {
+                gap: 20px;
+            }
+            
+            .cta h2 {
+                font-size: 1.6rem;
+            }
+            
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>What If You Could Benefit Personally... Before Ever Building a Business?</h1>
+            <p>I'm Christopher Elliott. I want to show you three options — no pressure, no pitch. Just something worth exploring.</p>
+            <div class="hero-tagline">Use. Learn. Build.</div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Watch This First</h2>
+            <p class="subhead">32 seconds. That's all I need.</p>
+            <div class="video-placeholder">
+                <p>[YOUR VIDEO EMBEDS HERE]</p>
+                <small>Replace this box with your WIX video embed code</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Message -->
+    <section class="core-message">
+        <div class="container">
+            <h2>Three Options. One Decision.</h2>
+            <p class="big-idea">You don't have to do all three. But what if you could?</p>
+            
+            <div class="use-learn-build">
+                <div class="ulb-item">
+                    <div class="icon">🧠</div>
+                    <div class="word">Use</div>
+                </div>
+                <div class="ulb-item">
+                    <div class="icon">🎓</div>
+                    <div class="word">Learn</div>
+               </div>
+                <div class="ulb-item">
+                    <div class="icon">📱</div>
+                    <div class="word">Build</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Options -->
+    <section class="options">
+        <div class="container">
+            <h2>What I Want to Show You</h2>
+            <p class="subhead">Each one stands on its own. Together, they're powerful.</p>
+            
+            <div class="option-grid">
+                <div class="option">
+                    <div class="option-icon">🧠</div>
+                    <h3>A Product You Can Actually Use</h3>
+                    <p>Patented neuroscience technology used by Navy SEALs, professional athletes, and Tony Robbins. Better sleep, less stress, sharper focus — without pills or stimulants.</p>
+                    <span class="tag">NuCalm</span>
+                </div>
+                
+                <div class="option">
+                    <div class="option-icon">🎓</div>
+                    <h3>Education From People Who've Done It</h3>
+                    <p>Learn directly from visionaries, entrepreneurs, and legacy builders. Not theory — proven patterns from people who've achieved what you're working toward.</p>
+                    <span class="tag">xosialX University</span>
+                </div>
+                
+                <div class="option">
+                    <div class="option-icon">📱</div>
+                    <h3>Tools to Build Something of Your Own</h3>
+                    <p>An app that handles prospecting, follow-up, training, and content. The business tools most people never get — built in from day one.</p>
+                    <span class="tag">The Business App</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What If -->
+    <section class="what-if">
+        <div class="container">
+            <h2>What If This Actually Works?</h2>
+            <p>What if you could sleep better, think clearer, and build something real — all at the same time? That's what I found. Now I want to show you.</p>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="proof">
+        <div class="container">
+            <h2>Backed By Real Results</h2>
+            <div class="proof-stats">
+                <div class="stat">
+                    <div class="stat-number">2B+</div>
+                    <div class="stat-label">Minutes of Use</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">78</div>
+                    <div class="stat-label">Pro Sports Teams</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>See What I'm Talking About</h2>
+            <p>This is NOT for you if you already live a stress free life, and Tony Robbins, Special Forces and professional sports teams don't know Jack.</p>
+            <p>This is NOT for you because you love living paycheck-to-paycheck; or you already hit the Power Ball.</p>
+            <p>This is NOT for you as you get all of your personal development from scrolling Tik Tok 3 hours a day watching people do funny skits.</p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScxO1QiGEGnoRPGOcN054rIQvkglH_dEqKNXjP_DDGn2GhXyA/viewform" target="_blank" class="cta-button">Prove Me Wrong</a>
+            
+            <p class="cta-note">I'll text you the info while at the same time you can experience first hand how it works.</p>
+       </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="container">
+            <p>Christopher Elliott | Why Not Profit</p>
+            <p>Questions? Text me directly.</p>
+        </div>
+    </section>
+
+</body>
+</html>
